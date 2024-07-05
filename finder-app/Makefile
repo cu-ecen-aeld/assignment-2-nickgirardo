@@ -17,6 +17,7 @@ TARGET = $(OUTDIR)/writer
 $(TARGET): $(OBJS)
 	@mkdir -p $(OUTDIR)
 	$(LD) $(LDFLAGS) -o $@ $^
+	ln -fs $@ `basename $@`
 
 $(OBJDIR)/%.o: %.c
 	@mkdir -p $(OBJDIR)
